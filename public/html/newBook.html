@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>New Book | Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav nav--other">
+        <a class="nav__link-logo" href="/">
+          <img
+            class="nav__logo"
+            src="/img/logo-black.png"
+            alt="Logo of The Story Haven"
+          />
+        </a>
+
+        <div class="nav__links">
+          <a href="/home#books" class="nav__link">Books</a>
+          <a href="/home#authors" class="nav__link">Authors</a>
+          <button class="nav__search-btn">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </div>
+      </nav>
+
+      <section class="create">
+        <div class="create__header">
+          <h2 class="heading-secondary create__heading">
+            Add a new book
+          </h2>
+        </div>
+        <!-- action="/books"
+        method="POST"
+        enctype="multipart/form-data" -->
+        <form class="create__form" id="createBookForm">
+          <!-- Title -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="title"
+              >Title</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="title"
+              required
+            />
+          </div>
+
+          <!-- Author -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="author"
+              >Author</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="author"
+              required
+            />
+          </div>
+
+          <!-- Publisher -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="publisher"
+              >Publisher</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="publisher"
+            />
+          </div>
+
+          <!-- Year Published -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="yearPublished"
+              >Year Published</label
+            >
+            <input
+              class="create__form--input"
+              type="number"
+              name="yearPublished"
+              min="0"
+              max="2025"
+              required
+            />
+          </div>
+
+          <!-- Language (dropdown) -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="language"
+              >Language</label
+            >
+            <select
+              class="create__form--dropdown"
+              name="language"
+              required
+            >
+              <option value="">Select language</option>
+              <option>Afrikaans</option>
+              <option>Arabic</option>
+              <option>Chinese</option>
+              <option>Czech</option>
+              <option>Danish</option>
+              <option>Dutch</option>
+              <option>English</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Italian</option>
+              <option>Japanese</option>
+              <option>Korean</option>
+              <option>Portuguese</option>
+              <option>Russian</option>
+              <option>Spanish</option>
+              <option>Ukrainian</option>
+              <option>Vietnamese</option>
+            </select>
+          </div>
+
+          <!-- Status -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="status"
+              >Status</label
+            >
+            <select
+              class="create__form--dropdown"
+              name="status"
+              required
+            >
+              <option value="Available">Available</option>
+              <option value="Borrowed">Borrowed</option>
+              <option value="On Hold">On Hold</option>
+              <option value="Lost">Lost</option>
+              <option value="Under Repair">Under Repair</option>
+              <option value="Archived">Archived</option>
+            </select>
+          </div>
+
+          <!-- Genre(s): comma-separated -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="genre"
+              >Genres (separated by comma)</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="genre"
+              placeholder="Dystopian, Science Fiction, Adventure"
+              required
+            />
+          </div>
+
+          <!-- Summary -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="summary"
+              >Summary</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="summary"
+              required
+            />
+          </div>
+
+          <!-- Cover image upload -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="imageCover"
+              >Book Cover</label
+            >
+            <input
+              class="create__form--upload"
+              type="file"
+              name="imageCover"
+              accept="image/*"
+            />
+          </div>
+
+          <button class="create__form--btn" type="submit">
+            Add Book
+          </button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="/home#books" class="footer__link">Books</a>
+          <a href="/home#authors" class="footer__link">Authors</a>
+          <a href="/" class="footer__link">Search</a>
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://x.com/">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2025 The Story Haven Ltd.
+        </p>
+      </footer>
+    </div>
+
+    <!-- ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('createBookForm');
+
+        form.addEventListener('submit', async e => {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+
+          const bookData = {
+            title: formData.get('title'),
+            author: formData
+              .get('author')
+              .split(',')
+              .map(g => g.trim()),
+            publisher: formData.get('publisher'),
+            yearPublished: Number(formData.get('yearPublished')),
+            language: formData.get('language'),
+            status: formData.get('status'),
+            genre: formData
+              .get('genre')
+              .split(',')
+              .map(g => g.trim()),
+            summary: formData.get('summary'),
+          };
+
+          try {
+            const response = await fetch('/api/v1/books', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(bookData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              alert('Book added successfully!');
+              window.location.href = '/home';
+            } else {
+              alert(`Error: ${data.message}`);
+            }
+          } catch (err) {
+            console.error(err);
+            alert('Something went wrong.');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

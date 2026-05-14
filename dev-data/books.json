@@ -1,0 +1,208 @@
+[
+  {
+    "title": "Wuthering Heights",
+    "author": "Emily Brontë",
+    "genre": ["Tragedy", "Gothic"],
+    "publisher": "Thomas Cautley Newby",
+    "yearPublished": 1847,
+    "language": "English",
+    "status": "Available",
+    "summary": "Emily Brontë's only novel, a work of tremendous and far-reaching influence, the Penguin Classics edition of Wuthering Heights is the definitive edition of the text, edited with an introduction by Pauline Nestor. Lockwood, the new tenant of Thrushcross Grange, situated on the bleak Yorkshire moors, is forced to seek shelter one night at Wuthering Heights, the home of his landlord. There he discovers the history of the tempestuous events that took place years before; of the intense relationship between the gypsy foundling Heathcliff and Catherine Earnshaw; and how Catherine, forced to choose between passionate, tortured Heathcliff and gentle, well-bred Edgar Linton, surrendered to the expectations of her class. As Heathcliff's bitterness and vengeance at his betrayal is visited upon the next generation, their innocent heirs must struggle to escape the legacy of the past.",
+    "imageCover": "book-1-cover.jpg",
+    "loanDates": [
+      "2021-06-19T09:56:00.000Z",
+      "2021-07-20T17:01:00.000Z",
+      "2021-08-18T14:37:00.000Z"
+    ]
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "genre": ["Gothic", "Romance", "Bildungsroman"],
+    "publisher": "Smith, Elder & Co.",
+    "yearPublished": 1847,
+    "language": "English",
+    "status": "Available",
+    "summary": "A gothic masterpiece of tempestuous passions and dark secrets, Charlotte Brontë's Jane Eyre is edited with an introduction and notes by Stevie Davis in Penguin Classics.\n\nCharlotte Brontë tells the story of orphaned Jane Eyre, who grows up in the home of her heartless aunt, enduring loneliness and cruelty. This troubled childhood strengthens Jane's natural independence and spirit - which prove necessary when she finds employment as a governess to the young ward of Byronic, brooding Mr Rochester. As her feelings for Rochester develop, Jane gradually uncovers Thornfield Hall's terrible secret, forcing her to make a choice. Should she stay with Rochester and live with the consequences, or follow her convictions - even if it means leaving the man she loves? A novel of intense power and intrigue, Jane Eyre dazzled readers with its passionate depiction of a woman's search for equality and freedom.",
+    "imageCover": "book-2-cover.jpg",
+    "loanDates": [
+      "2022-03-11T10:45:00.000Z",
+      "2022-07-01T13:12:00.000Z"
+    ]
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": ["Romance", "Satire"],
+    "publisher": "T. Egerton, Whitehall",
+    "yearPublished": 1813,
+    "language": "English",
+    "status": "Available",
+    "summary": "Pride and Prejudice centers on Elizabeth Bennet as she navigates issues of manners, morality, education, and marriage in the British Regency era. Her initial prejudice and Mr. Darcy's pride form the tension of this witty and insightful romantic novel. \n\nPride and Prejudice has charmed generations of readers for more than two centuries. Jane Austen's much-adapted novel is famed for its witty, spirited heroine, sensational romances, and deft remarks on the triumphs and pitfalls of social convention. Author Jane Austen (1775-1817) was an English novelist whose works of social realism achieved unprecedented critical and popular success, though Austen herself remained an anonymous writer throughout her life.",
+    "imageCover": "book-3-cover.jpg",
+    "loanDates": ["2023-01-20T14:00:00.000Z"]
+  },
+  {
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": ["Gothic", "Horror", "Science Fiction"],
+    "publisher": "Lackington, Hughes, Harding, Mavor & Jones",
+    "yearPublished": 1818,
+    "language": "English",
+    "status": "Borrowed",
+    "summary": "Frankenstein tells the story of Victor Frankenstein, a young scientist who creates a sapient creature in an unorthodox experiment. The novel explores themes of ambition, responsibility, alienation, and the consequences of scientific overreach. This edition is the original 1818 text, which preserves the hard-hitting and politically charged aspects of Shelley's original writing, as well as her unflinching wit and strong female voice. This edition also includes a new introduction and suggestions for further reading by author and Shelley expert Charlotte Gordon, literary excerpts and reviews selected by Gordon and a chronology and essay by preeminent Shelley scholar Charles E. Robinson.",
+    "imageCover": "book-4-cover.jpg",
+    "loanDates": [
+      "2021-12-05T09:30:00.000Z",
+      "2022-10-18T11:15:00.000Z",
+      "2024-04-09T08:22:00.000Z"
+    ]
+  },
+  {
+    "title": "Woman on the Edge of Time",
+    "author": "Marge Piercy",
+    "genre": [
+      "Science Fiction",
+      "Feminist Literature",
+      "Speculative"
+    ],
+    "publisher": "Alfred A. Knopf",
+    "yearPublished": 1976,
+    "language": "English",
+    "status": "Available",
+    "summary": "After being unjustly committed to a mental institution, Connie Ramos is contacted by an envoy from the year 2137, who shows her a utopian future of sexual and racial equality and environmental harmony.But Connie also bears witness to another potential outcome: a dystopian society of grotesque exploitation. One will become our world. And Connie herself may strike the decisive blow... ",
+    "imageCover": "book-5-cover.jpg",
+    "loanDates": [
+      "2023-02-14T15:55:00.000Z",
+      "2023-06-30T17:40:00.000Z"
+    ]
+  },
+  {
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": ["Dystopian", "Science Fiction", "Adventure"],
+    "publisher": "Scholastic Press",
+    "yearPublished": 2008,
+    "language": "English",
+    "status": "Borrowed",
+    "summary": "Winning means fame and fortune. Losing means certain death. The Hunger Games have begun.\n\nIn the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol is harsh and cruel and keeps the districts in line by forcing them all to send one boy and one girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV. \n\nSixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to dead before-and survival, for her, is second nature. Without really meaning to, she becomes a contender. But if she is to win, she will have to start making choices that weigh survival against humanity and life against love.",
+    "imageCover": "book-6-cover.jpg",
+    "loanDates": [
+      "2024-01-05T12:05:00.000Z",
+      "2024-03-22T09:10:00.000Z"
+    ]
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genre": ["Thriller", "Mystery", "Psychological Fiction"],
+    "publisher": "Crown Publishing Group",
+    "yearPublished": 2012,
+    "language": "English",
+    "status": "Available",
+    "summary": "Who are you?\nWhat have we done to each other?\n\nThese are the questions Nick Dunne finds himself asking on the morning of his fifth wedding anniversary when his wife Amy suddenly disappears. The police suspect Nick. Amy's friends reveal that she was afraid of him, that she kept secrets from him. He swears it isn't true. A police examination of his computer shows strange searches. He says they weren't made by him. And then there are the persistent calls on his mobile phone.\n\nSo what did happen to Nick's beautiful wife?",
+    "imageCover": "book-7-cover.jpg",
+    "loanDates": ["2023-08-21T18:30:00.000Z"]
+  },
+  {
+    "title": "Ritual",
+    "author": "Marina Dyachenko",
+    "genre": ["Fantasy", "Drama"],
+    "publisher": "Eksmo Publishing",
+    "yearPublished": 1996,
+    "language": "Russian",
+    "status": "Available",
+    "summary": "During the royal feast, a terrible dragon flew and kidnapped the princess to her castle. Her life changed suddenly. All he knows for sure now is that he's supposed to play a part in an ancient ritual. The highlight of her life in captivity is the visits of a mysterious young man named Arman. How did he get to the island and what is it? When it comes down to it, it's too late... Love for the Dragon Prince is bitter and very dangerous.",
+    "imageCover": "book-8-cover.jpg",
+    "loanDates": [
+      "2022-11-11T07:48:00.000Z",
+      "2023-09-27T16:12:00.000Z"
+    ]
+  },
+  {
+    "title": "Catching Fire",
+    "author": "Suzanne Collins",
+    "genre": ["Dystopian", "Science Fiction", "Adventure"],
+    "publisher": "Scholastic Press",
+    "yearPublished": 2009,
+    "language": "English",
+    "status": "Borrowed",
+    "summary": "Against all odds, Katniss Everdeen has won the Hunger Games. She and fellow District 12 tribute Peeta Mellark are miraculously still alive. Katniss should be relieved, happy even. After all, she has returned to her family and her longtime friend, Gale. Yet nothing is the way Katniss wishes it to be. Gale holds her at an icy distance. Peeta has turned his back on her completely. And there are whispers of a rebellion against the Capitol—a rebellion that Katniss and Peeta may have helped create. \n\nMuch to her shock, Katniss has fueled an unrest that she's afraid she cannot stop. And what scares her even more is that she's not entirely convinced she should try. As time draws near for Katniss and Peeta to visit the districts on the Capitol's cruel Victory Tour, the stakes are higher than ever. If they can't prove, without a shadow of a doubt, that they are lost in their love for each other, the consequences will be horrifying.\n\nIn Catching Fire, the second novel of the Hunger Games trilogy, Suzanne Collins continues the story of Katniss Everdeen, testing her more than ever before . . . and surprising readers at every turn.",
+    "imageCover": "book-9-cover.jpg",
+    "loanDates": [
+      "2024-05-09T14:45:00.000Z",
+      "2024-06-28T10:30:00.000Z"
+    ]
+  },
+  {
+    "title": "I Who Have Never Known Men",
+    "author": "Jacqueline Harpman",
+    "genre": ["Dystopian", "Philosophical Fiction"],
+    "publisher": "Lerners Editions",
+    "yearPublished": 1995,
+    "language": "French",
+    "status": "Available",
+    "summary": "Deep underground, forty women live imprisoned in a cage. Watched over by guards, the women have no memory of how they got there, no notion of time, and only a vague recollection of their lives before.\n\nAs the burn of electric light merges day into night and numberless years pass, a young girl—the fortieth prisoner—sits alone and outcast in the corner. Soon she will show herself to be the key to the others' escape and survival in the strange world that awaits them above ground.\n\nJacqueline Harpman was born in Etterbeek, Belgium, in 1929, and fled to Casablanca with her family during WWII. Informed by her background as a psychoanalyst and her youth in exile, I Who Have Never Known Men is a haunting, heartbreaking post-apocalyptic novel of female friendship and intimacy, and the lengths people will go to maintain their humanity in the face of devastation. Back in print for the first time since 1997, Harpman’s modern classic is an important addition to the growing canon of feminist speculative literature.",
+    "imageCover": "book-10-cover.jpg",
+    "loanDates": ["2021-09-09T10:25:00.000Z"]
+  },
+  {
+    "title": "Sense and Sensibility",
+    "author": "Jane Austen",
+    "genre": ["Romance", "Satire"],
+    "publisher": "T. Egerton, Whitehall",
+    "yearPublished": 1811,
+    "language": "English",
+    "status": "Available",
+    "summary": "'The more I know of the world, the more am I convinced that I shall never see a man whom I can really love. I require so much!'\n\nMarianne Dashwood wears her heart on her sleeve, and when she falls in love with the dashing but unsuitable John Willoughby she ignores her sister Elinor's warning that her impulsive behaviour leaves her open to gossip and innuendo. Meanwhile Elinor, always sensitive to social convention, is struggling to conceal her own romantic disappointment, even from those closest to her. Through their parallel experience of love—and its threatened loss—the sisters learn that sense must mix with sensibility if they are to find personal happiness in a society where status and money govern the rules of love.\n\nThis edition includes explanatory notes, textual variants between the first and second editions, and Tony Tanner's introduction to the original Penguin Classic edition.",
+    "imageCover": "book-11-cover.jpg",
+    "loanDates": [
+      "2022-04-12T11:30:00.000Z",
+      "2023-02-07T10:10:00.000Z"
+    ]
+  },
+  {
+    "title": "The Tenant of Wildfell Hall",
+    "author": "Anne Brontë",
+    "genre": ["Gothic", "Social Novel", "Romance"],
+    "publisher": "Thomas Cautley Newby",
+    "yearPublished": 1848,
+    "language": "English",
+    "status": "Borrowed",
+    "summary": "Gilbert Markham is deeply intrigued by Helen Graham, a beautiful and secretive young woman who has moved into nearby Wildfell Hall with her young son. He is quick to offer Helen his friendship, but when her reclusive behaviour becomes the subject of local gossip and speculation, Gilbert begins to wonder whether his trust in her has been misplaced. It is only when she allows Gilbert to read her diary that the truth is revealed and the shocking details of the disastrous marriage she has left behind emerge. Told with great immediacy, combined with wit and irony, The Tenant of Wildfell Hall is a powerful depiction of a woman's fight for domestic independence and creative freedom.",
+    "imageCover": "book-12-cover.jpg",
+    "loanDates": [
+      "2022-05-01T14:55:00.000Z",
+      "2023-04-10T09:40:00.000Z",
+      "2024-05-18T11:18:00.000Z"
+    ]
+  },
+  {
+    "title": "Emma",
+    "author": "Jane Austen",
+    "genre": ["Romance", "Comedy of Manners"],
+    "publisher": "John Murray",
+    "yearPublished": 1815,
+    "language": "English",
+    "status": "Available",
+    "summary": "Emma Woodhouse is one of Austen's most captivating and vivid characters. Beautiful, spoilt, vain and irrepressibly witty, Emma organizes the lives of the inhabitants of her sleepy little village and plays matchmaker with devastating effect.",
+    "imageCover": "book-13-cover.webp",
+    "loanDates": [
+      "2021-10-03T09:05:00.000Z",
+      "2023-06-19T13:22:00.000Z"
+    ]
+  },
+
+  {
+    "title": "Mockingjay",
+    "author": "Suzanne Collins",
+    "genre": ["Dystopian", "Science Fiction", "Adventure"],
+    "publisher": "Scholastic Press",
+    "yearPublished": 2010,
+    "language": "English",
+    "status": "Available",
+    "summary": "Katniss Everdeen, girl on fire, has survived, even though her home has been destroyed. Gale has escaped. Katniss's family is safe. Peeta has been captured by the Capitol. District 13 really does exist. There are rebels. There are new leaders. A revolution is unfolding.\n\nIt is by design that Katniss was rescued from the arena in the cruel and haunting Quarter Quell, and it is by design that she has long been part of the revolution without knowing it. District 13 has come out of the shadows and is plotting to overthrow the Capitol. Everyone, it seems, has had a hand in the carefully laid plans—except Katniss.\n\nThe success of the rebellion hinges on Katniss's willingness to be a pawn, to accept responsibility for countless lives, and to change the course of the future of Panem. To do this, she must put aside her feelings of anger and distrust. She must become the rebels' Mockingjay—no matter what the personal cost.",
+    "imageCover": "book-14-cover.jpg",
+    "loanDates": ["2023-12-14T12:15:00.000Z"]
+  }
+]

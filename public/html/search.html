@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Search Results | Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav nav--other">
+        <a class="nav__link-logo" href="/">
+          <img
+            class="nav__logo"
+            src="../img/logo-black.png"
+            alt="Logo of The Story Haven"
+          />
+        </a>
+
+        <div class="nav__links">
+          <a href="/home#books" class="nav__link">Books</a>
+          <a href="/home#authors" class="nav__link">Authors</a>
+          <button class="nav__search-btn">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </div>
+      </nav>
+
+      <section class="search">
+        <div class="create__header">
+          <h2 class="heading-secondary create__heading">
+            Search results
+          </h2>
+        </div>
+
+        <div class="search__books" id="books">
+          <div class="books__grid">
+            <div class="book__card">
+              <img class="book__card-img" />
+              <div class="book__card-info">
+                <a href="./details.html" class="book__card-title"></a>
+                <a href="#" class="book__card-author"></a>
+                <div class="book__card-additional">
+                  <p></p>
+                  <div class="book__card-circle"></div>
+                  <p></p>
+                </div>
+                <div class="book__card-tags">
+                  <p class="book__card-tag book__card-tag--1"></p>
+                  <p class="book__card-tag book__card-tag--2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="/home#books" class="footer__link">Books</a>
+          <a href="/home#authors" class="footer__link">Authors</a>
+          <a href="/" class="footer__link">Search</a>
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://x.com/">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2025 The Story Haven Ltd.
+        </p>
+      </footer>
+    </div>
+
+    <!-- ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      async function runSearch() {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+
+        const booksGrid = document.querySelector('.books__grid');
+
+        if (!query) {
+          booksGrid.innerHTML = `<p class="no-results">No search query provided.</p>`;
+          return;
+        }
+
+        try {
+          const res = await fetch(
+            `/api/v1/books/search?q=${encodeURIComponent(query)}`
+          );
+          const data = await res.json();
+
+          if (!res.ok || data.results === 0) {
+            booksGrid.innerHTML = `<p class="no-results">No books found for "${query}".</p>`;
+            return;
+          }
+
+          const books = data.data.books;
+
+          booksGrid.innerHTML = books
+            .map(book => {
+              const cover = book.imageCover
+                ? `/img/book-covers/${book.imageCover}`
+                : `/img/book-covers/default.jpg`;
+
+              const authors = book.author.map(a => a.name).join(', ');
+              const tagColors = {
+                romance: 'book__card-tag--1',
+                fantasy: 'book__card-tag--1',
+                drama: 'book__card-tag--1',
+                satire: 'book__card-tag--1',
+
+                horror: 'book__card-tag--2',
+                gothic: 'book__card-tag--2',
+                thriller: 'book__card-tag--2',
+                tragedy: 'book__card-tag--2',
+                dystopian: 'book__card-tag--2',
+
+                history: 'book__card-tag--3',
+                mystery: 'book__card-tag--3',
+                adventure: 'book__card-tag--3',
+                bildungsroman: 'book__card-tag--3',
+                'science fiction': 'book__card-tag--3',
+              };
+
+              return `
+            <div class="book__card">
+              <img class="book__card-img" src="${cover}" alt="Cover of ${
+                book.title
+              }" />
+
+              <div class="book__card-info">
+                <a href="/book/${
+                  book._id
+                }" class="book__card-title">${book.title}</a>
+                <p class="book__card-author">${authors}</p>
+
+                <div class="book__card-additional">
+                  <p>${book.yearPublished}</p>
+                  <div class="book__card-circle"></div>
+                  <p>${book.language}</p>
+                </div>
+
+<div class="book__card-tags">
+        ${book.genre
+          .map(tag => {
+            const className =
+              tagColors[tag.toLowerCase()] || 'book__card-tag--0';
+            return `<p class="book__card-tag ${className}">${tag}</p>`;
+          })
+          .join('')}
+
+      </div>
+              </div>
+            </div>`;
+            })
+            .join('');
+        } catch (err) {
+          booksGrid.innerHTML = `<p class="no-results">Something went wrong loading results.</p>`;
+        }
+      }
+
+      runSearch();
+    </script>
+  </body>
+</html>

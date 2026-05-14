@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="../style.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Edit Book | Library</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav nav--other">
+        <a class="nav__link-logo" href="/">
+          <img
+            class="nav__logo"
+            src="../img/logo-black.png"
+            alt="Logo of The Story Haven"
+          />
+        </a>
+
+        <div class="nav__links">
+          <a href="/home#books" class="nav__link">Books</a>
+          <a href="/home#authors" class="nav__link">Authors</a>
+          <button class="nav__search-btn">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </div>
+      </nav>
+
+      <section class="create">
+        <div class="create__header">
+          <h2 class="heading-secondary create__heading">Edit book</h2>
+        </div>
+        <form class="create__form">
+          <!-- Title -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="title"
+              >Title</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="title"
+              required
+            />
+          </div>
+
+          <!-- Author -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="author"
+              >Author</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="author"
+              required
+            />
+          </div>
+
+          <!-- Publisher -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="publisher"
+              >Publisher</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="publisher"
+            />
+          </div>
+
+          <!-- Year Published -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="yearPublished"
+              >Year Published</label
+            >
+            <input
+              class="create__form--input"
+              type="number"
+              name="yearPublished"
+              min="0"
+              max="2025"
+              required
+            />
+          </div>
+
+          <!-- Language (dropdown) -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="language"
+              >Language</label
+            >
+            <select class="create__form--dropdown" name="language">
+              <option value="">Select language</option>
+              <option>Afrikaans</option>
+              <option>Arabic</option>
+              <option>Chinese</option>
+              <option>Czech</option>
+              <option>Danish</option>
+              <option>Dutch</option>
+              <option>English</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Italian</option>
+              <option>Japanese</option>
+              <option>Korean</option>
+              <option>Portuguese</option>
+              <option>Russian</option>
+              <option>Spanish</option>
+              <option>Ukrainian</option>
+              <option>Vietnamese</option>
+            </select>
+          </div>
+
+          <!-- Status -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="status"
+              >Status</label
+            >
+            <select
+              class="create__form--dropdown"
+              name="status"
+              required
+            >
+              <option value="Available">Available</option>
+              <option value="Borrowed">Borrowed</option>
+              <option value="On Hold">On Hold</option>
+              <option value="Lost">Lost</option>
+              <option value="Under Repair">Under Repair</option>
+              <option value="Archived">Archived</option>
+            </select>
+          </div>
+
+          <!-- Genre(s): comma-separated -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="genre"
+              >Genres (separated by comma)</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="genre"
+              placeholder="Dystopian, Science Fiction, Adventure"
+              required
+            />
+          </div>
+
+          <!-- Summary -->
+          <div class="create__form--field">
+            <label class="create__form--label" for="summary"
+              >Summary</label
+            >
+            <input
+              class="create__form--input"
+              type="text"
+              name="summary"
+              required
+            />
+          </div>
+
+          <button class="create__form--btn" type="submit">
+            Save Changes
+          </button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__links">
+          <a href="/home#books" class="footer__link">Books</a>
+          <a href="/home#authors" class="footer__link">Authors</a>
+          <a href="/" class="footer__link">Search</a>
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+          <a href="https://x.com/">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2025 The Story Haven Ltd.
+        </p>
+      </footer>
+    </div>
+
+    <!-- ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      const id = window.location.pathname.split('/').pop();
+
+      const form = document.querySelector('.create__form');
+
+      // LOAD BOOK AND FILL FORM
+      async function loadBook() {
+        const res = await fetch(`/api/v1/books/${id}`);
+        const data = await res.json();
+        const book = data.data.book;
+
+        form.title.value = book.title;
+        form.author.value = book.author.map(a => a.name).join(', ');
+        form.publisher.value = book.publisher || '';
+        form.yearPublished.value = book.yearPublished;
+        form.language.value = book.language;
+        form.status.value = book.status;
+        form.genre.value = book.genre.join(', ');
+        form.summary.value = book.summary;
+      }
+
+      loadBook();
+
+      // HANDLE FORM SUBMIT (PATCH)
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+
+        const body = {
+          title: form.title.value,
+          author: form.author.value.split(',').map(a => a.trim()),
+          publisher: form.publisher.value,
+          yearPublished: Number(form.yearPublished.value),
+          language: form.language.value,
+          status: form.status.value,
+          genre: form.genre.value.split(',').map(g => g.trim()),
+          summary: form.summary.value,
+        };
+
+        const res = await fetch(`/api/v1/books/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+
+        if (res.status === 200) {
+          window.location.href = '/';
+        }
+      });
+    </script>
+  </body>
+</html>

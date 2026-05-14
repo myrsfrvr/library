@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Emily Brontë",
+    "birthYear": 1818,
+    "nationality": "British",
+    "biography": "Emily Brontë was an English novelist and poet, best known for her only novel, Wuthering Heights, a classic of English literature.",
+    "image": "emily-bronte.jpg"
+  },
+  {
+    "name": "Jane Austen",
+    "birthYear": 1775,
+    "nationality": "British",
+    "biography": "Jane Austen was an English novelist known for her witty social commentary and works such as Pride and Prejudice and Emma.",
+    "image": "jane-austen.jpg"
+  },
+  {
+    "name": "Charlotte Brontë",
+    "birthYear": 1816,
+    "nationality": "British",
+    "biography": "Charlotte Brontë was an English novelist and poet, author of Jane Eyre, and the eldest of the Brontë sisters.",
+    "image": "charlotte-bronte.jpg"
+  },
+  {
+    "name": "Gillian Flynn",
+    "birthYear": 1971,
+    "nationality": "American",
+    "biography": "Gillian Flynn is an American author and screenwriter, famous for her dark psychological thrillers, including Gone Girl.",
+    "image": "gillian-flynn.avif"
+  },
+  {
+    "name": "Jacqueline Harpman",
+    "birthYear": 1929,
+    "nationality": "Belgian",
+    "biography": "Jacqueline Harpman was a Belgian writer whose works often explore existential and philosophical themes, including I Who Have Never Known Men.",
+    "image": "jacqueline-harpman.jpg"
+  },
+  {
+    "name": "Mary Shelley",
+    "birthYear": 1797,
+    "nationality": "British",
+    "biography": "Mary Shelley was an English novelist, best known for writing Frankenstein, a landmark work of Gothic literature and science fiction.",
+    "image": "mary-shelley.jpg"
+  },
+  {
+    "name": "Anne Brontë",
+    "birthYear": 1820,
+    "nationality": "British",
+    "biography": "Anne Brontë was an English novelist and poet, known for The Tenant of Wildfell Hall and Agnes Grey, focusing on social issues and women's rights.",
+    "image": "anne-bronte.jpg"
+  },
+  {
+    "name": "Marina Dyachenko",
+    "birthYear": 1968,
+    "nationality": "Ukrainian",
+    "biography": "Marina Dyachenko is a Ukrainian author of fantasy and science fiction novels, including Ritual, often blending folklore with imaginative storytelling.",
+    "image": "marina-dyachenko.jpg"
+  },
+  {
+    "name": "Suzanne Collins",
+    "birthYear": 1962,
+    "nationality": "American",
+    "biography": "Suzanne Collins is an American author and television writer, best known for The Hunger Games trilogy.",
+    "image": "suzanne-collins.jpg"
+  },
+  {
+    "name": "Marge Piercy",
+    "birthYear": 1936,
+    "nationality": "American",
+    "biography": "Marge Piercy is an American poet, novelist, and social activist, known for feminist and speculative fiction, including Woman on the Edge of Time.",
+    "image": "marge-piercy.jpg"
+  }
+]
