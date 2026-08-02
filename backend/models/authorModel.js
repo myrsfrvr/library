@@ -17,6 +17,10 @@ const authorSchema = new mongoose.Schema({
     type: String,
     default: 'author-default.png',
   },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const Author = mongoose.model('Author', authorSchema);

@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const qs = require('qs');
 const path = require('path');
 
@@ -7,6 +8,8 @@ const bookRouter = require('./routes/bookRouter');
 const authorRouter = require('./routes/authorRouter');
 
 const app = express();
+
+app.use(cors());
 
 app.set('query parser', str => qs.parse(str));
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+
 :root {
   --color-primary: #845ef7;
   --color-primary-dark: #6741d9;
@@ -878,8 +880,8 @@ body {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.55);
-  display: none;
 
+  display: flex;
   justify-content: center;
   align-items: center;
 
