@@ -1,5 +1,7 @@
 # Library Management System
 
+Project is currently being expanded and rewritten using React. Changes can be seen on the react-rewrite branch.
+
 Projekt knihovního systému vytvořený pomocí Node.js, Express a MongoDB jako semestrální práce pro univerzitu v období listopad–prosinec 2025.
 
 Aplikace slouží pro správu databáze knih a autorů. Data jsou ukládána do NoSQL databáze MongoDB ve formě kolekcí (books a authors).
