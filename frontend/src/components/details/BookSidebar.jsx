@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import SERVER_URL from '../../config/server';
 
 function BookSidebar({ book, onDelete }) {
   return (
     <div className="details__sidebar">
       <img
         className="details__img"
-        src={`http://localhost:8000/img/book-covers/${book.imageCover}`}
+        src={`${SERVER_URL}/img/book-covers/${book.imageCover}`}
         alt={book.title}
       />
 

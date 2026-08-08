@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SERVER_URL from '../../config/server';
 
 const tagColors = {
   romance: 'book__card-tag--1',
@@ -20,14 +21,15 @@ const tagColors = {
 };
 
 function BookCard({ book, onDelete }) {
-  const IMAGE_URL = 'http://localhost:8000';
+  // const IMAGE_URL = 'http://localhost:8000';
 
   return (
     <div className="book__card">
       <img
         className="book__card-img"
         // src={`/img/book-covers/${book.imageCover}`}
-        src={`${IMAGE_URL}/img/book-covers/${book.imageCover}`}
+        // src={`${IMAGE_URL}/img/book-covers/${book.imageCover}`}
+        src={`${SERVER_URL}/img/book-covers/${book.imageCover}`}
         alt={book.title}
       />
 
