@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import BookSidebar from '../components/details/BookSidebar';
 import BookInformation from '../components/details/BookInformation';
 import DeleteModal from '../components/common/DeleteModal';
+import Loading from '../components/common/Loading';
 
 import useBook from '../hooks/useBook';
 
@@ -15,7 +16,7 @@ function BookDetailsPage() {
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loading />;
 
   if (error) return <p>{error}</p>;
 

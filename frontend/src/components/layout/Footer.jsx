@@ -1,4 +1,9 @@
 import { Link } from 'react-router-dom';
+import {
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoLinkedin,
+} from 'react-icons/io5';
 
 function Footer() {
   return (
@@ -19,11 +24,11 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Instagram
+          <IoLogoInstagram />
         </a>
 
         <a href="https://x.com/" target="_blank" rel="noreferrer">
-          X
+          <IoLogoTwitter />
         </a>
 
         <a
@@ -31,11 +36,13 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          LinkedIn
+          <IoLogoLinkedin />
         </a>
       </div>
 
-      <p className="footer__copyright">© 2026 The Story Haven Ltd.</p>
+      <p className="footer__copyright">
+        © 2026 The Story Haven Ltd. This is not a real website
+      </p>
     </footer>
   );
 }

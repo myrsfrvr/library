@@ -5,6 +5,7 @@ import Hero from '../components/common/Hero';
 import BooksSection from '../components/books/BooksSection';
 import AuthorsSection from '../components/authors/AuthorsSection';
 import DeleteModal from '../components/common/DeleteModal';
+import Loading from '../components/common/Loading';
 
 import useBooks from '../hooks/useBooks';
 import useAuthors from '../hooks/useAuthors';
@@ -20,13 +21,13 @@ function HomePage() {
       <Hero />
 
       {booksLoading ? (
-        <p>Loading books...</p>
+        <Loading />
       ) : (
         <BooksSection books={books} onDelete={setBookToDelete} />
       )}
 
       {authorsLoading ? (
-        <p>Loading authors...</p>
+        <Loading />
       ) : (
         <AuthorsSection authors={authors} />
       )}

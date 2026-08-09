@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SERVER_URL from '../../config/server';
+import { IoTrashOutline, IoCreateOutline } from 'react-icons/io5';
 
 const tagColors = {
   romance: 'book__card-tag--1',
@@ -27,16 +28,11 @@ function BookCard({ book, onDelete }) {
     <div className="book__card">
       <img
         className="book__card-img"
-        // src={`/img/book-covers/${book.imageCover}`}
-        // src={`${IMAGE_URL}/img/book-covers/${book.imageCover}`}
         src={`${SERVER_URL}/img/book-covers/${book.imageCover}`}
         alt={book.title}
       />
 
       <div className="book__card-info">
-        {/* <Link to={`/books/${book._id}`} className="book__card-title">
-          {book.title}
-        </Link> */}
         <Link to={`/books/${book._id}`} className="book__card-title">
           {book.title}
         </Link>
@@ -68,13 +64,15 @@ function BookCard({ book, onDelete }) {
       </div>
 
       <div className="book__card-btns">
-        <button className="book__card-btn">✏️</button>
+        <button className="book__card-btn">
+          <IoCreateOutline />
+        </button>
 
         <button
           className="book__card-btn book__card-btn--delete"
           onClick={() => onDelete(book)}
         >
-          🗑️
+          <IoTrashOutline />
         </button>
       </div>
     </div>

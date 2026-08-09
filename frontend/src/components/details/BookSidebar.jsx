@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SERVER_URL from '../../config/server';
+import { IoTrashOutline, IoCreateOutline } from 'react-icons/io5';
 
 function BookSidebar({ book, onDelete }) {
   return (
@@ -15,7 +16,7 @@ function BookSidebar({ book, onDelete }) {
           to={`/books/${book._id}/edit`}
           className="details__btn details__btn--edit"
         >
-          <ion-icon name="create-outline"></ion-icon>
+          <IoCreateOutline />
           <p>Edit</p>
         </Link>
 
@@ -23,7 +24,7 @@ function BookSidebar({ book, onDelete }) {
           className="details__btn details__btn--delete"
           onClick={onDelete}
         >
-          <ion-icon name="trash-outline"></ion-icon>
+          <IoTrashOutline />
           <p>Delete</p>
         </button>
       </div>
