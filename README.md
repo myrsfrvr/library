@@ -1,29 +1,83 @@
 # Library Management System
 
-Project is currently being expanded and rewritten using React. Changes can be seen on the react-rewrite branch.
+Library Management System je webová aplikace pro správu knihovny vytvořená pomocí Node.js, Express, MongoDB a Reactu.
 
-Projekt knihovního systému vytvořený pomocí Node.js, Express a MongoDB jako semestrální práce pro univerzitu v období listopad–prosinec 2025.
+Projekt vznikl původně jako semestrální práce pro univerzitu v období listopad–prosinec 2025. Původní frontend byl vytvořen pomocí Vanilla JavaScriptu. Následně byl celý frontend přepracován do Reactu a projekt je dále rozšiřován o funkce plnohodnotného knihovního systému.
 
-Aplikace slouží pro správu databáze knih a autorů. Data jsou ukládána do NoSQL databáze MongoDB ve formě kolekcí (books a authors).
+## Funkce
 
-Projekt umožňuje:
+Aktuální verze umožňuje:
 
+- zobrazování seznamu knih
+- zobrazování detailu knihy
 - přidávání nových knih
 - úpravu knih
 - mazání knih
-- zobrazování detailu knihy
-- automatické vytvoření autora při přidání nové knihy s novým autorem
+- správu autorů
+- automatické vytvoření autora při přidání knihy s novým autorem
+- zobrazování žánrů
+- zobrazování dostupnosti knih
+- načítání dat z REST API
+- zobrazování loading a error stavů
+- navigaci pomocí React Routeru
 
-Projekt je napsán pomocí:
+## Technologie
+
+### Frontend
+
+- React
+- React Router
+- JavaScript
+- HTML
+- CSS
+- Vite
+
+Frontend je rozdělen do znovupoužitelných komponent a využívá vlastní React hooks pro práci s daty a API.
+
+### Backend
 
 - Node.js
 - Express
+- REST API
 - MongoDB
 - Mongoose
 - Morgan
 - Nodemon
-- Vanilla JavaScript
-- HTML + CSS
+
+Backend poskytuje API pro práci s knihami a autory a zajišťuje komunikaci s databází MongoDB.
+
+## React frontend
+
+Původní frontend aplikace byl vytvořen pomocí Vanilla JavaScriptu. V současné verzi byl frontend kompletně přepracován do Reactu.
+
+Reactová verze využívá například:
+
+- komponentovou architekturu
+- React Router pro navigaci
+- vlastní hooks pro práci s API
+- znovupoužitelné komponenty
+- řízení formulářů pomocí React state
+- loading a error states
+- oddělení API logiky od UI komponent
+- dynamické vykreslování dat z databáze
+
+Například operace s knihami jsou odděleny do API vrstvy, zatímco vlastní UI je rozděleno do samostatných komponent a stránek.
+
+## API
+
+Backend poskytuje REST API pro práci s knihami.
+
+Hlavní endpointy:
+
+GET /api/v1/books
+GET /api/v1/books/:id
+POST /api/v1/books
+PATCH /api/v1/books/:id
+DELETE /api/v1/books/:id
+
+API také obsahuje endpoint pro vyhledávání knih:
+
+GET /api/v1/books/search?q=
 
 Do budoucna plánuji projekt rozšířit na plnohodnotnou knihovní aplikaci s:
 
@@ -31,6 +85,22 @@ Do budoucna plánuji projekt rozšířit na plnohodnotnou knihovní aplikaci s:
 - možností půjčování knih
 - React frontendem
 - veřejně dostupnou live verzí
+
+## Plánované rozšíření
+
+Projekt je dále aktivně rozšiřován. Mezi plánované funkce patří:
+
+- vyhledávání knih
+- registrace uživatelů
+- přihlášení uživatelů
+- autentizace a autorizace
+- uživatelské role a oprávnění
+- půjčování a vracení knih
+- historie výpůjček
+- správa uživatelských účtů
+- rozšíření administrace knihovny
+- nasazení aplikace na veřejný server
+- veřejně dostupné live demo
 
 ## Screenshoty
 
@@ -53,59 +123,45 @@ cd library
 
 2. Instalace dependencies
 
+Backend a frontend mají vlastní package.json, proto je potřeba nainstalovat dependencies pro obě části projektu.
+
+Backend
+
 ```bash
+cd backend
 npm install
 ```
 
-3. Vytvoření config.env
-
-V kořenové složce projektu vytvořte soubor:
+Frontend
 
 ```bash
-config.env
+cd ../frontend
+npm install
 ```
 
-Do něj zkopírujte obsah souboru .env.example.
+3. Konfigurace backendu
+
+V adresáři backend vytvořte soubor config.env
+Do něj zkopírujte obsah souboru .env.example a doplňte potřebné hodnoty.
 
 ### Použití vzdálené MongoDB databáze
 
-Pokud chcete použít vzdálenou MongoDB databázi:
-
-1. Vyplňte:
+Pro použití vzdálené MongoDB databáze vyplňte:
 
 ```env
-DATABASE
-DATABASE_PASSWORD
+DATABASE=your_database_connection_string
+DATABASE_PASSWORD=your_database_password
 ```
-
-2. Není potřeba upravovat server.js
 
 ### Použití lokální MongoDB databáze
 
-Pokud chcete použít lokální MongoDB databázi:
-
-1. Odkomentujte řádek v config.env
+Pokud chcete použít lokální MongoDB databázi, nastavte:
 
 ```env
 DATABASE_LOCAL=local_db_connection_string
 ```
 
-2. V souboru server.js
-
-Odkomentujte:
-
-```js
-// const DB = process.env.DATABASE_LOCAL;
-```
-
-A zakomentujte:
-
-```js
-const DB = process.env.DATABASE.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD,
-);
-```
+a v server.js použijte lokální databázové připojení.
 
 ### Import testovacích dat
 
@@ -128,13 +184,23 @@ node import-dev-data.js --delete
 
 ### Spuštění aplikace
 
-Po připojení k databázi spusťte:
+Backend
 
 ```bash
+cd backend
 npm start
 ```
 
-Aplikace poběží na http://localhost:8000
+Backend poběží na http://localhost:8000
+
+Frontend
+
+```bash
+cd frontend
+npm run dev
+```
+
+Vite následně zobrazí adresu, na které frontend běží, typicky http://localhost:5173
 
 ## Celkový vzhled aplikace
 
