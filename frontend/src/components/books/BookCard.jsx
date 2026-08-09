@@ -64,9 +64,12 @@ function BookCard({ book, onDelete }) {
       </div>
 
       <div className="book__card-btns">
-        <button className="book__card-btn">
+        <Link
+          to={`/books/${book._id}/edit`}
+          className="book__card-btn"
+        >
           <IoCreateOutline />
-        </button>
+        </Link>
 
         <button
           className="book__card-btn book__card-btn--delete"

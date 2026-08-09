@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import BookCard from './BookCard';
 
 function BooksSection({ books, onDelete }) {
@@ -5,6 +6,10 @@ function BooksSection({ books, onDelete }) {
     <section className="books">
       <div className="books__heading">
         <h2 className="heading-secondary">Books</h2>
+
+        <Link to="/books/new" className="books__link">
+          New
+        </Link>
       </div>
 
       <div className="books__grid">

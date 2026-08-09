@@ -4,6 +4,7 @@ import Layout from './components/layout/Layout';
 
 import HomePage from './pages/HomePage';
 import BookDetailsPage from './pages/BookDetailsPage';
+import BookFormPage from './pages/BookFormPage';
 // import BooksPage from './pages/BooksPage';
 // import BookPage from './pages/BookPage';
 // import AuthorsPage from './pages/AuthorsPage';
@@ -18,6 +19,8 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/books/:id" element={<BookDetailsPage />} />
+        <Route path="/books/new" element={<BookFormPage />} />
+        <Route path="/books/:id/edit" element={<BookFormPage />} />
 
         {/* <Route path="/books" element={<BooksPage />} />
                 <Route path="/books/:id" element={<BookPage />} />

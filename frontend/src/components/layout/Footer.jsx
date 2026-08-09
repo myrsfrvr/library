@@ -41,7 +41,8 @@ function Footer() {
       </div>
 
       <p className="footer__copyright">
-        © 2026 The Story Haven Ltd. This is not a real website
+        © 2026 The Story Haven Ltd. This website is a personal project
+        and does not represent a real library or organization.
       </p>
     </footer>
   );

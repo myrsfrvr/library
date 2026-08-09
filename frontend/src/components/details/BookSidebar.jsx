@@ -12,6 +12,13 @@ function BookSidebar({ book, onDelete }) {
       />
 
       <div className="details__btns">
+        {/* <Link
+          to={`/books/${book._id}/edit`}
+          className="details__btn details__btn--edit"
+        >
+          <IoCreateOutline />
+          <p>Edit</p>
+        </Link> */}
         <Link
           to={`/books/${book._id}/edit`}
           className="details__btn details__btn--edit"
