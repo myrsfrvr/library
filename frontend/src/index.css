@@ -187,6 +187,10 @@ body {
   border: none;
   font-size: 2rem;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav__search-btn:hover {
@@ -274,6 +278,7 @@ body {
 .books {
   padding: 0 8rem;
   margin-bottom: 5rem;
+  margin-top: 2rem;
 }
 
 .books__heading,
@@ -971,11 +976,26 @@ body {
 
 .search {
   margin-top: 8rem;
+
+  /* min-height: 60vh; */
 }
 
 .search__books {
   padding: 0 8rem;
   margin: 5rem 0;
+}
+
+.search__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5rem 0 5rem;
+}
+
+.search__not-found--img {
+  width: 8%;
 }
 
 .no-results {

@@ -6,14 +6,16 @@ import {
 } from 'react-icons/io5';
 
 function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer__links">
-        <Link className="footer__link" to="/books">
+        <Link className="footer__link" to="/">
           Books
         </Link>
 
-        <Link className="footer__link" to="/authors">
+        <Link className="footer__link" to="/">
           Authors
         </Link>
       </div>
@@ -41,8 +43,8 @@ function Footer() {
       </div>
 
       <p className="footer__copyright">
-        © 2026 The Story Haven Ltd. This website is a personal project
-        and does not represent a real library or organization.
+        © {year} The Story Haven Ltd. This website is a personal
+        project and does not represent a real library or organization.
       </p>
     </footer>
   );

@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { IoSearch } from 'react-icons/io5';
+
+import SearchModal from '../common/SearchModal';
 
 function Navbar() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
   const [scrolled, setScrolled] = useState(false);
+  const [showSearchModal, setShowSearchModal] = useState(false);
 
   useEffect(() => {
     if (!isHomePage) return;
@@ -47,15 +51,27 @@ function Navbar() {
         </div>
       ) : (
         <div className="nav__links--scrolled">
-          <Link to="/#books" className="nav__link">
+          <Link to="/" className="nav__link">
             Books
           </Link>
 
-          <Link to="/#authors" className="nav__link">
+          <Link to="/" className="nav__link">
             Authors
           </Link>
+
+          <button
+            className="nav__search-btn"
+            onClick={() => setShowSearchModal(true)}
+          >
+            <IoSearch />
+          </button>
         </div>
       )}
+
+      <SearchModal
+        isOpen={showSearchModal}
+        onClose={() => setShowSearchModal(false)}
+      />
     </nav>
   );
 }

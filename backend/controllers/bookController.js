@@ -22,7 +22,7 @@ exports.getAllBooks = async (req, res) => {
 exports.getBook = async (req, res) => {
   try {
     const book = await Book.findById(req.params.id).populate(
-      'author'
+      'author',
     );
 
     res.status(200).json({
@@ -65,7 +65,7 @@ exports.updateBook = async (req, res) => {
       {
         new: true,
         runValidators: true,
-      }
+      },
     );
 
     res.status(200).json({
@@ -113,12 +113,12 @@ exports.searchBooks = async (req, res) => {
       $text: { $search: query },
     }).populate('author');
 
-    if (books.length === 0) {
-      return res.status(404).json({
-        status: 'fail',
-        message: 'Books not found',
-      });
-    }
+    // if (books.length === 0) {
+    //   return res.status(404).json({
+    //     status: 'fail',
+    //     message: 'Books not found',
+    //   });
+    // }
 
     res.status(200).json({
       status: 'success',
