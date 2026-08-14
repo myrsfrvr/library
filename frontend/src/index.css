@@ -758,7 +758,6 @@ body {
 .details__btn,
 .details__btn:link,
 .details__btn:visited {
-  /* all: unset; */
   text-decoration: none;
   padding: 0.8rem 1.4rem;
   background-color: #fff;
@@ -976,8 +975,6 @@ body {
 
 .search {
   margin-top: 8rem;
-
-  /* min-height: 60vh; */
 }
 
 .search__books {
