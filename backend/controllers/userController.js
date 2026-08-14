@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 exports.register = async (req, res) => {
   try {
@@ -19,6 +20,12 @@ exports.register = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+const createToken = id => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
 };
 
 exports.login = async (req, res) => {
@@ -44,10 +51,23 @@ exports.login = async (req, res) => {
       });
     }
 
+    const token = createToken(user._id);
+
     res.status(200).json({
       message: 'Login successful',
-      user,
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role,
+      },
     });
+
+    // res.status(200).json({
+    //   message: 'Login successful',
+    //   user,
+    // });
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -55,6 +75,15 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.logout = async (req, res) => {};
+// exports.logout = async (req, res) => {};
 
-exports.getCurrentUser = async (req, res) => {};
+exports.getCurrentUser = async (req, res) => {
+  res.status(200).json({
+    user: {
+      id: req.user._id,
+      username: req.user.username,
+      email: req.user.email,
+      role: req.user.role,
+    },
+  });
+};
