@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import BookSidebar from '../components/details/BookSidebar';
-import BookInformation from '../components/details/BookInformation';
-import DeleteModal from '../components/common/DeleteModal';
-import Loading from '../components/common/Loading';
+import BookSidebar from '../../components/details/BookSidebar';
+import BookInformation from '../../components/details/BookInformation';
+import DeleteModal from '../../components/common/DeleteModal';
+import Loading from '../../components/common/Loading';
 
-import useBook from '../hooks/useBook';
+import useBook from '../../hooks/useBook';
+
+// TODO: available only for a client, change routes
 
 function BookDetailsPage() {
   const { id } = useParams();

@@ -1,10 +1,12 @@
 import { useNavigate, useParams } from 'react-router-dom';
 
-import BookForm from '../components/books/BookForm';
-import Loading from '../components/common/Loading';
+import BookForm from '../../components/books/BookForm';
+import Loading from '../../components/common/Loading';
 
-import useBook from '../hooks/useBook';
-import { createBook, updateBook } from '../api/booksApi';
+import useBook from '../../hooks/useBook';
+import { createBook, updateBook } from '../../api/booksApi';
+
+// TODO: available only for an admin, also protect all the CRUD operations from backend
 
 function BookFormPage() {
   const { id } = useParams();

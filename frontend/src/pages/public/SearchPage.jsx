@@ -1,10 +1,12 @@
 import { useSearchParams } from 'react-router-dom';
 
-import BooksSection from '../components/books/BooksSection';
+import BooksSection from '../../components/books/BooksSection';
 
-import Loading from '../components/common/Loading';
+import Loading from '../../components/common/Loading';
 
-import useSearchBooks from '../hooks/useSearchBooks';
+import useSearchBooks from '../../hooks/useSearchBooks';
+
+// TODO: search is aldo for a client
 
 function SearchPage() {
   const [searchParams] = useSearchParams();

@@ -8,13 +8,20 @@ import ProtectedRoute from './components/routes/ProtectedRoute';
 import AdminRoute from './components/routes/AdminRoute';
 
 import HomePage from './pages/HomePage';
-import BookDetailsPage from './pages/BookDetailsPage';
-import BookFormPage from './pages/BookFormPage';
-import SearchPage from './pages/SearchPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
-import AccountPage from './pages/AccountPage';
-import AdminDashboard from './pages/AdminDashboard';
+import BookDetailsPage from './pages/public/BookDetailsPage';
+import BookFormPage from './pages/admin/BookFormPage';
+import SearchPage from './pages/public/SearchPage';
+import LoginPage from './pages/public/LoginPage';
+import RegisterPage from './pages/public/RegisterPage';
+import AccountPage from './pages/client/AccountPage';
+import AdminDashboard from './pages/admin/AdminDashboard';
+
+// TODO:
+// 1. protect login and register from loggen in users
+// 2. database editing is solely for admins
+// 3. kill the huge bug in my room right now :(
+// 4. search is for clients
+// /admin would not exist probably as home page will render admin dashboard if user is admin
 
 function App() {
   return (

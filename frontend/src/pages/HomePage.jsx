@@ -10,6 +10,21 @@ import Loading from '../components/common/Loading';
 import useBooks from '../hooks/useBooks';
 import useAuthors from '../hooks/useAuthors';
 
+// TODO: probably what home page should look like. render / based on user.
+// function HomePage() {
+//   const { user } = useAuth();
+
+//   if (!user) {
+//     return <LandingPage />;
+//   }
+
+//   if (user.role === 'admin') {
+//     return <AdminDashboard />;
+//   }
+
+//   return <ClientDashboard />;
+// }
+
 function HomePage() {
   const [bookToDelete, setBookToDelete] = useState(null);
 
