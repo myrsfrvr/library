@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -12,9 +12,12 @@ function Hero() {
           Discover Worlds, One Book at a Time
         </p>
 
-        {/* <Link to="/books" className="header__btn">
+        <Link to="/login" className="header__btn">
           Get started
-        </Link> */}
+        </Link>
+        <Link to="/register" className="header__btn">
+          Register
+        </Link>
       </div>
 
       <div className="header__right-side"></div>

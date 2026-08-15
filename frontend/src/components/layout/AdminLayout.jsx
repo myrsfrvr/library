@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
+import PublicNavbar from './PublicNavbar';
 
 function AdminLayout() {
   return (
     <main>
-      <Navbar />
+      <PublicNavbar />
       <Outlet />
     </main>
   );

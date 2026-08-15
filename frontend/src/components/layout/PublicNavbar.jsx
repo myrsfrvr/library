@@ -4,7 +4,7 @@ import { IoSearch } from 'react-icons/io5';
 
 import SearchModal from '../common/SearchModal';
 
-function Navbar() {
+function PublicNavbar() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -76,4 +76,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default PublicNavbar;

@@ -8,6 +8,13 @@ function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const logout = () => {
+    localStorage.removeItem('token');
+
+    setToken(null);
+    setUser(null);
+  };
+
   useEffect(() => {
     async function restoreUser() {
       const storedToken = localStorage.getItem('token');
@@ -42,6 +49,7 @@ function AuthProvider({ children }) {
         loading,
         setUser,
         setToken,
+        logout,
       }}
     >
       {children}

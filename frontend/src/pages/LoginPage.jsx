@@ -28,7 +28,7 @@ function LoginPage() {
 
       localStorage.setItem('token', data.token);
 
-      navigate('/');
+      navigate('/account');
     } catch (error) {
       setError(
         error.message || 'Something went wrong. Please try again.',

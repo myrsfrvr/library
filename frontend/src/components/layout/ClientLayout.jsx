@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
 
-import Navbar from './Navbar';
+import ClientNavbar from './ClientNavbar';
 import Footer from './Footer';
 
 function ClientLayout() {
   return (
     <>
-      <Navbar />
+      <ClientNavbar />
 
       <main>
         <Outlet />
