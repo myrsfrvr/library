@@ -6,6 +6,7 @@ import useAuth from '../../hooks/useAuth';
 
 function LoginPage() {
   const navigate = useNavigate();
+
   const { setUser, setToken } = useAuth();
 
   const [email, setEmail] = useState('');
@@ -39,13 +40,20 @@ function LoginPage() {
   }
 
   return (
-    <section className="login">
-      <div className="login__container">
-        <h1>Welcome back</h1>
+    <main className="auth">
+      <div className="auth__decoration auth__decoration--one"></div>
+      <div className="auth__decoration auth__decoration--two"></div>
 
-        <p>Log in to continue reading.</p>
+      <section className="auth__card">
+        <div className="auth__header">
+          <span className="auth__subtitle">THE STORY HAVEN</span>
 
-        <form onSubmit={handleSubmit}>
+          <h1>Welcome back</h1>
+
+          <p>Log in to continue your reading journey.</p>
+        </div>
+
+        <form className="auth__form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email</label>
 
@@ -74,17 +82,21 @@ function LoginPage() {
 
           {error && <p className="form-error">{error}</p>}
 
-          <button type="submit" disabled={loading}>
+          <button
+            type="submit"
+            className="auth__submit"
+            disabled={loading}
+          >
             {loading ? 'Logging in...' : 'Log in'}
           </button>
         </form>
 
-        <p>
+        <p className="auth__switch">
           Don't have an account?{' '}
           <Link to="/register">Create one</Link>
         </p>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
 

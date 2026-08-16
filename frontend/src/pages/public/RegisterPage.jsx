@@ -10,27 +10,22 @@ function RegisterPage() {
   const { setUser, setToken } = useAuth();
 
   const [username, setUsername] = useState('');
-
   const [email, setEmail] = useState('');
-
   const [password, setPassword] = useState('');
 
   const [loading, setLoading] = useState(false);
-
   const [error, setError] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     setError('');
-
     setLoading(true);
 
     try {
       const data = await registerUser(username, email, password);
 
       setToken(data.token);
-
       setUser(data.user);
 
       localStorage.setItem('token', data.token);
@@ -46,16 +41,20 @@ function RegisterPage() {
   }
 
   return (
-    <section className="register">
-      <div className="register__container">
-        <h1>Create an account</h1>
-        <h1>Create an account</h1>
-        <h1>Create an account</h1>
-        <h1>Create an account</h1>
+    <main className="auth">
+      <div className="auth__decoration auth__decoration--one"></div>
+      <div className="auth__decoration auth__decoration--two"></div>
 
-        <p>Join The Story Haven.</p>
+      <section className="auth__card">
+        <div className="auth__header">
+          <span className="auth__subtitle">THE STORY HAVEN</span>
 
-        <form onSubmit={handleSubmit}>
+          <h1>Create an account</h1>
+
+          <p>Join The Story Haven and start your reading journey.</p>
+        </div>
+
+        <form className="auth__form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
 
@@ -94,16 +93,20 @@ function RegisterPage() {
 
           {error && <p className="form-error">{error}</p>}
 
-          <button type="submit" disabled={loading}>
+          <button
+            type="submit"
+            className="auth__submit"
+            disabled={loading}
+          >
             {loading ? 'Creating account...' : 'Create account'}
           </button>
         </form>
 
-        <p>
+        <p className="auth__switch">
           Already have an account? <Link to="/login">Log in</Link>
         </p>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
 

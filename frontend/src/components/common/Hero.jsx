@@ -12,7 +12,7 @@ function Hero() {
           Discover Worlds, One Book at a Time
         </p>
 
-        <Link to="/login" className="header__btn">
+        <Link to="/register" className="header__btn">
           Get started
         </Link>
         {/* <Link to="/register" className="header__btn">
