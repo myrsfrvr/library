@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { IoSearch } from 'react-icons/io5';
+// import { IoSearch } from 'react-icons/io5';
 
-import SearchModal from '../common/SearchModal';
+// import SearchModal from '../common/SearchModal';
 
 function PublicNavbar() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
   const [scrolled, setScrolled] = useState(false);
-  const [showSearchModal, setShowSearchModal] = useState(false);
+  // const [showSearchModal, setShowSearchModal] = useState(false);
+
+  const isAuthPage =
+    location.pathname === '/login' ||
+    location.pathname === '/register';
 
   useEffect(() => {
     if (!isHomePage) return;
@@ -43,9 +47,9 @@ function PublicNavbar() {
         />
       </Link>
 
-      {!showScrolledNavbar ? (
+      {/* {!showScrolledNavbar ? (
         <div className="nav__links--default">
-          <a href="#books" className="nav__btn">
+          <a href="/" className="nav__btn">
             Browse Books
           </a>
         </div>
@@ -66,12 +70,31 @@ function PublicNavbar() {
             <IoSearch />
           </button>
         </div>
+      )} */}
+
+      {showScrolledNavbar && !isAuthPage && (
+        <div className="nav__links--scrolled">
+          <Link to="/login" className="nav__link">
+            Login
+          </Link>
+
+          <Link to="/register" className="nav__btn--primary">
+            Sign up
+          </Link>
+
+          {/* <button
+            className="nav__search-btn"
+            onClick={() => setShowSearchModal(true)}
+          >
+            <IoSearch />
+          </button> */}
+        </div>
       )}
 
-      <SearchModal
+      {/* <SearchModal
         isOpen={showSearchModal}
         onClose={() => setShowSearchModal(false)}
-      />
+      /> */}
     </nav>
   );
 }

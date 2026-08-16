@@ -15,9 +15,9 @@ function Hero() {
         <Link to="/login" className="header__btn">
           Get started
         </Link>
-        <Link to="/register" className="header__btn">
+        {/* <Link to="/register" className="header__btn">
           Register
-        </Link>
+        </Link> */}
       </div>
 
       <div className="header__right-side"></div>
