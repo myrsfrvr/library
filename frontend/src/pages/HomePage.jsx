@@ -1,63 +1,34 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
-import Hero from '../components/common/Hero';
+// import Hero from '../components/common/Hero';
 
-import BooksSection from '../components/books/BooksSection';
-import AuthorsSection from '../components/authors/AuthorsSection';
-import DeleteModal from '../components/common/DeleteModal';
-import Loading from '../components/common/Loading';
+// import BooksSection from '../components/books/BooksSection';
+// import AuthorsSection from '../components/authors/AuthorsSection';
+// import DeleteModal from '../components/common/DeleteModal';
+// import Loading from '../components/common/Loading';
 
-import useBooks from '../hooks/useBooks';
-import useAuthors from '../hooks/useAuthors';
+// import useBooks from '../hooks/useBooks';
+// import useAuthors from '../hooks/useAuthors';
+
+import useAuth from '../hooks/useAuth';
+
+import LandingPage from './public/LandingPage';
+import AdminDashboard from './admin/AdminDashboard';
+import ClientDashboard from './client/ClientDashboard';
 
 // TODO: probably what home page should look like. render / based on user.
-// function HomePage() {
-//   const { user } = useAuth();
-
-//   if (!user) {
-//     return <LandingPage />;
-//   }
-
-//   if (user.role === 'admin') {
-//     return <AdminDashboard />;
-//   }
-
-//   return <ClientDashboard />;
-// }
-
 function HomePage() {
-  const [bookToDelete, setBookToDelete] = useState(null);
+  const { user } = useAuth();
 
-  const { books, loading: booksLoading, removeBook } = useBooks();
-  const { authors, loading: authorsLoading } = useAuthors();
+  if (!user) {
+    return <LandingPage />;
+  }
 
-  return (
-    <>
-      <Hero />
+  if (user.role === 'admin') {
+    return <AdminDashboard />;
+  }
 
-      {booksLoading ? (
-        <Loading />
-      ) : (
-        <BooksSection books={books} onDelete={setBookToDelete} />
-      )}
-
-      {authorsLoading ? (
-        <Loading />
-      ) : (
-        <AuthorsSection authors={authors} />
-      )}
-
-      <DeleteModal
-        isOpen={bookToDelete !== null}
-        onCancel={() => setBookToDelete(null)}
-        onConfirm={async () => {
-          await removeBook(bookToDelete._id);
-
-          setBookToDelete(null);
-        }}
-      />
-    </>
-  );
+  return <ClientDashboard />;
 }
 
 export default HomePage;
