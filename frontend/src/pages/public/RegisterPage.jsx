@@ -30,7 +30,7 @@ function RegisterPage() {
 
       localStorage.setItem('token', data.token);
 
-      navigate('/account');
+      navigate('/dashboard');
     } catch (error) {
       setError(
         error.message || 'Something went wrong. Please try again.',

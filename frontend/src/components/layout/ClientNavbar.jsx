@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoPersonCircleOutline, IoSearch } from 'react-icons/io5';
 
 import useAuth from '../../hooks/useAuth';
@@ -7,14 +7,36 @@ import useAuth from '../../hooks/useAuth';
 import SearchModal from '../common/SearchModal';
 
 function ClientNavbar() {
+  const location = useLocation();
   const navigate = useNavigate();
 
   const { user, logout } = useAuth();
 
+  const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showSearchModal, setShowSearchModal] = useState(false);
 
   const menuRef = useRef(null);
+
+  const isDashboard = location.pathname === '/dashboard';
+
+  useEffect(() => {
+    if (!isDashboard) return;
+
+    function handleScroll() {
+      setScrolled(window.scrollY > 50);
+    }
+
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isDashboard]);
+
+  const showScrolledNavbar = !isDashboard || scrolled;
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -35,12 +57,11 @@ function ClientNavbar() {
 
   function handleLogout() {
     logout();
-
     navigate('/login');
   }
 
   return (
-    <nav className="nav scrolled">
+    <nav className={`nav ${showScrolledNavbar ? 'scrolled' : ''}`}>
       <Link to="/" className="nav__link-logo">
         <img
           className="nav__logo"
@@ -49,56 +70,58 @@ function ClientNavbar() {
         />
       </Link>
 
-      <div className="nav__links--scrolled">
-        <Link to="/books" className="nav__link">
-          Books
-        </Link>
+      {showScrolledNavbar && (
+        <div className="nav__links--scrolled">
+          {/* <div className="nav__links--scrolled"> */}
+          <Link to="/books" className="nav__link">
+            Books
+          </Link>
 
-        <Link to="/authors" className="nav__link">
-          Authors
-        </Link>
+          <Link to="/authors" className="nav__link">
+            Authors
+          </Link>
 
-        <button
-          className="nav__search-btn"
-          onClick={() => setShowSearchModal(true)}
-        >
-          <IoSearch />
-        </button>
-
-        <div className="client-nav__profile" ref={menuRef}>
           <button
             className="nav__search-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setShowSearchModal(true)}
           >
-            <IoPersonCircleOutline />
+            <IoSearch />
           </button>
 
-          {isMenuOpen && (
-            <div className="client-nav__dropdown">
-              <div className="client-nav__user">
-                <p>{user?.username}</p>
+          <div className="client-nav__profile" ref={menuRef}>
+            <button
+              className="nav__search-btn"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <IoPersonCircleOutline />
+            </button>
 
-                <p>{user?.email}</p>
+            {isMenuOpen && (
+              <div className="client-nav__dropdown">
+                <div className="client-nav__user">
+                  <p>{user?.username}</p>
+                  <p>{user?.email}</p>
+                </div>
+
+                <Link
+                  to="/account"
+                  className="client-nav__dropdown-link"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  My account
+                </Link>
+
+                <button
+                  className="client-nav__logout"
+                  onClick={handleLogout}
+                >
+                  Log out
+                </button>
               </div>
-
-              <Link
-                to="/account"
-                className="client-nav__dropdown-link"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                My account
-              </Link>
-
-              <button
-                className="client-nav__logout"
-                onClick={handleLogout}
-              >
-                Log out
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       <SearchModal
         isOpen={showSearchModal}

@@ -14,48 +14,59 @@ import BookFormPage from './pages/admin/BookFormPage';
 import SearchPage from './pages/client/SearchPage';
 import LoginPage from './pages/public/LoginPage';
 import RegisterPage from './pages/public/RegisterPage';
-import AccountPage from './pages/client/AccountPage';
-// import AdminDashboard from './pages/admin/AdminDashboard';
+// import AccountPage from './pages/client/AccountPage';
+import AdminDashboard from './pages/admin/AdminDashboard';
 import BooksPage from './pages/client/BooksPage';
-import AuthorsPage from './pages/client/AuthorsPage';
+// import AuthorsPage from './pages/client/AuthorsPage';
+import ScrollToTop from './components/common/ScrollToTop';
+import ClientDashboard from './pages/client/ClientDashboard';
+import LandingPage from './pages/public/LandingPage';
+import NotFoundPage from './pages/public/NotFoundPage';
 
 function App() {
   return (
-    <Routes>
-      <Route element={<PublicLayout />}>
-        <Route path="/" element={<HomePage />} />
-      </Route>
+    <>
+      <ScrollToTop />
 
-      <Route element={<GuestOnlyRoute />}>
+      <Routes>
         <Route element={<PublicLayout />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
-      </Route>
 
-      <Route element={<ClientRoute />}>
-        <Route element={<ClientLayout />}>
-          <Route path="/account" element={<AccountPage />} />
-          <Route path="/books" element={<BooksPage />} />
-          <Route path="/books/:id" element={<BookDetailsPage />} />
-          <Route path="/authors" element={<AuthorsPage />} />
-          <Route path="/search" element={<SearchPage />} />
+        <Route element={<GuestOnlyRoute />}>
+          <Route element={<PublicLayout />}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Route>
         </Route>
-      </Route>
 
-      <Route element={<AdminRoute />}>
-        <Route element={<AdminLayout />}>
-          {/* <Route path="/admin" element={<AdminDashboard />} /> */}
-          <Route path="/admin/books/new" element={<BookFormPage />} />
-          <Route
-            path="/admin/books/:id/edit"
-            element={<BookFormPage />}
-          />
+        <Route element={<ClientRoute />}>
+          <Route element={<ClientLayout />}>
+            <Route path="/dashboard" element={<ClientDashboard />} />
+            {/* <Route path="/account" element={<AccountPage />} /> */}
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/books/:id" element={<BookDetailsPage />} />
+            {/* <Route path="/authors" element={<AuthorsPage />} /> */}
+            <Route path="/search" element={<SearchPage />} />
+          </Route>
         </Route>
-      </Route>
 
-      {/* <Route path="*" element={<NotFoundPage />} /> */}
-    </Routes>
+        <Route element={<AdminRoute />}>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route
+              path="/admin/books/new"
+              element={<BookFormPage />}
+            />
+            <Route
+              path="/admin/books/:id/edit"
+              element={<BookFormPage />}
+            />
+          </Route>
+        </Route>
+      </Routes>
+    </>
   );
 }
 

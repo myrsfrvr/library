@@ -9,8 +9,12 @@ function GuestOnlyRoute() {
     return null;
   }
 
-  if (user) {
-    return <Navigate to="/" replace />;
+  if (user?.role === 'admin') {
+    return <Navigate to="/admin" replace />;
+  }
+
+  if (user?.role === 'client') {
+    return <Navigate to="/dashboard" replace />;
   }
 
   return <Outlet />;
