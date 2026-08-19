@@ -1,25 +1,55 @@
-# Library Management System
+# Book Tracker App
 
-Library Management System je webová aplikace pro správu knihovny vytvořená pomocí Node.js, Express, MongoDB a Reactu.
+🚧 Work in Progress
+[Live Demo](https://library-fe-o700.onrender.com)
 
-Projekt vznikl původně jako semestrální práce pro univerzitu v období listopad–prosinec 2025. Původní frontend byl vytvořen pomocí Vanilla JavaScriptu. Následně byl celý frontend přepracován do Reactu a projekt je dále rozšiřován o funkce plnohodnotného knihovního systému.
+Book Tracker App je full-stack webová aplikace pro správu knih a sledování čtení vytvořená pomocí Reactu, Node.js, Expressu a MongoDB.
+
+Projekt vznikl původně jako semestrální práce pro univerzitu v období listopad–prosinec 2025. Původní verze měla frontend vytvořený pomocí Vanilla JavaScriptu. Následně byl frontend kompletně přepracován do Reactu a projekt se postupně rozšiřuje z jednoduchého systému pro správu knih na plnohodnotnou knihovní aplikaci s uživatelskými účty, autentizací, autorizací a rozdílným rozhraním podle role uživatele.
+
+Projekt je stále aktivně vyvíjen. Současná verze je nasazena na veřejném serveru, ale některé části uživatelského rozhraní a další funkce jsou stále ve vývoji.
 
 ## Funkce
 
-Aktuální verze umožňuje:
+### Knihy a autoři
 
 - zobrazování seznamu knih
 - zobrazování detailu knihy
+- vyhledávání knih
 - přidávání nových knih
-- úpravu knih
+- úprava knih
 - mazání knih
-- správu autorů
+- správa autorů
 - automatické vytvoření autora při přidání knihy s novým autorem
-- zobrazování žánrů
-- zobrazování dostupnosti knih
 - načítání dat z REST API
-- zobrazování loading a error stavů
-- navigaci pomocí React Routeru
+- loading a error states
+- navigace pomocí React Routeru
+
+### Uživatelé a autentizace
+
+Aplikace nyní obsahuje kompletní základ uživatelské autentizace a autorizace:
+
+- registrace uživatelů
+- přihlášení uživatelů
+- odhlášení
+- autentizace pomocí JWT
+- bezpečné hashování hesel pomocí bcrypt
+- obnova přihlášeného uživatele po obnovení stránky
+- ochrana privátních rout
+- autorizace podle uživatelské role
+- role client a admin
+
+Autentizační stav je na frontendu spravován pomocí React Context API (AuthContext).
+
+### Uživatelské rozhraní podle role
+
+Aplikace používá rozdílné layouty a obsah podle typu uživatele:
+
+- Nepřihlášený uživatel – veřejná landing page a veřejné části aplikace
+- Client – uživatelské rozhraní zaměřené na sledování čtení a práci s knihami
+- Admin – administrátorské rozhraní pro správu knihovny
+
+Přístup k jednotlivým stránkám je řízen pomocí chráněných rout a autorizace podle role uživatele.
 
 ## Technologie
 
@@ -32,7 +62,7 @@ Aktuální verze umožňuje:
 - CSS
 - Vite
 
-Frontend je rozdělen do znovupoužitelných komponent a využívá vlastní React hooks pro práci s daty a API.
+Frontend je rozdělen do znovupoužitelných komponent a využívá vlastní React hooks a Context API.
 
 ### Backend
 
@@ -41,6 +71,8 @@ Frontend je rozdělen do znovupoužitelných komponent a využívá vlastní Rea
 - REST API
 - MongoDB
 - Mongoose
+- JWT
+- bcrypt
 - Morgan
 - Nodemon
 
@@ -55,11 +87,15 @@ Reactová verze využívá například:
 - komponentovou architekturu
 - React Router pro navigaci
 - vlastní hooks pro práci s API
+- Context API pro autentizaci
+- chráněné a role-based routes
+- samostatné layouty pro jednotlivé typy uživatelů
 - znovupoužitelné komponenty
 - řízení formulářů pomocí React state
 - loading a error states
 - oddělení API logiky od UI komponent
 - dynamické vykreslování dat z databáze
+- ScrollToTop pro správné chování navigace mezi stránkami
 
 Například operace s knihami jsou odděleny do API vrstvy, zatímco vlastní UI je rozděleno do samostatných komponent a stránek.
 
@@ -75,34 +111,51 @@ POST /api/v1/books
 PATCH /api/v1/books/:id
 DELETE /api/v1/books/:id
 
-API také obsahuje endpoint pro vyhledávání knih:
+Vyhledávání knih:
 
 GET /api/v1/books/search?q=
 
-Do budoucna plánuji projekt rozšířit na plnohodnotnou knihovní aplikaci s:
+API obsahuje také endpointy pro:
 
-- autentizací uživatelů
-- možností půjčování knih
-- React frontendem
-- veřejně dostupnou live verzí
+registraci uživatelů
+přihlášení uživatelů
+získání aktuálně přihlášeného uživatele
+
+Autentizované endpointy jsou chráněny pomocí JWT a přístup k administrátorským funkcím je omezen podle uživatelské role.
+
+## Aktuální stav projektu
+
+🚧 Projekt je stále ve vývoji.
+
+Základní backend, REST API, CRUD operace, autentizace, autorizace, role uživatelů a základní role-based frontend jsou již implementovány a aplikace je nasazena na veřejném serveru.
+
+Aktuálně se zaměřuji především na další rozvoj frontendu a uživatelského prostředí. Mezi rozpracované části patří například:
+
+- dokončení uživatelského účtu
+- dokončení client dashboardu
+- dokončení administrátorského dashboardu
+- responsive web design
+- další rozvoj client navigace
+- vylepšení designu landing page
+- vylepšení designu client dashboardu
+- další úpravy UX a responzivity
+- postupné rozšiřování funkcí knihovního systému
 
 ## Plánované rozšíření
 
-Projekt je dále aktivně rozšiřován. Mezi plánované funkce patří:
+Mezi další plánované funkce patří:
 
-- vyhledávání knih
-- registrace uživatelů
-- přihlášení uživatelů
-- autentizace a autorizace
-- uživatelské role a oprávnění
 - půjčování a vracení knih
 - historie výpůjček
-- správa uživatelských účtů
+- sledování průběhu čtení
+- ukládání a správa knih uživatelem
+- statistiky čtení
+- doporučování knih
 - rozšíření administrace knihovny
-- nasazení aplikace na veřejný server
-- veřejně dostupné live demo
+- další možnosti správy uživatelských účtů
+- další vylepšení UX a vizuálního designu
 
-## Screenshoty
+## Screenshoty (stará verze)
 
 ![Hero sekce](screenshots/heroSection.png)
 
